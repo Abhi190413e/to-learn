@@ -1,0 +1,28 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<h2>Admin Dashboard</h2>
+<h3>Recent Login Activity</h3>
+<table border="1" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+    <thead>
+        <tr style="background-color: #f2f2f2;">
+            <th style="padding: 8px; text-align: left;">User ID</th>
+            <th style="padding: 8px; text-align: left;">Timestamp</th>
+            <th style="padding: 8px; text-align: left;">IP Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for log in logs %}
+        <tr>
+            <td style="padding: 8px;">{{ log.user_id }}</td>
+            <td style="padding: 8px;">{{ log.timestamp }}</td>
+            <td style="padding: 8px;">{{ log.ip_address }}</td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="3" style="padding: 8px; text-align: center;">No login activity found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<h2>Add Video to Course</h2>
+<form method="POST" action="{{ url_for('add_video') }}">
+    <div class="form-group">
+        <label for="course_id">Select Course</label>
+        <select id="course_id" name="course_id" required style="width: 100%; padding: 8px;">
+            {% for course in courses %}
+            <option value="{{ course.id }}">{{ course.title }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="title">Video Title</label>
+        <input type="text" id="title" name="title" required>
+    </div>
+    <div class="form-group">
+        <label for="url">Video Link</label>
+        <input type="text" id="url" name="url" placeholder="https://youtube.com/..." required>
+    </div>
+    <button type="submit" class="btn">Add Video</button>
+</form>
+{% endblock %}

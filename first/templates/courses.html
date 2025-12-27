@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="page-container">
+    <h2>Our Courses</h2>
+    <div class="features-grid" style="background: transparent; padding: 2rem 0;">
+        {% for course in courses %}
+        <div class="feature-card courses">
+            {% if course.image_url %}
+            <img src="{{ course.image_url }}" alt="{{ course.title }}"
+                style="width:100%; height:150px; object-fit:cover; margin-bottom:10px;">
+            {% endif %}
+            <h3>{{ course.title }}</h3>
+            <p>{{ course.description }}</p>
+            {% if course.videos %}
+            <div style="margin-top: 10px; text-align: left;">
+                <strong>Videos:</strong>
+                <ul style="list-style: none; padding: 0;">
+                    {% for video in course.videos %}
+                    <li><a href="{{ video.url }}" target="_blank" style="color: var(--color-blue);">{{ video.title
+                            }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+        {% else %}
+        <p>No courses available at the moment.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

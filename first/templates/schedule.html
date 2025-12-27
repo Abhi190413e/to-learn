@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="page-container">
+    <h2>Your Schedule & Task Tracker</h2>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <div>
+            <h3>Upcoming Classes</h3>
+            <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                <li style="padding: 1rem; border-bottom: 1px solid #eee;">
+                    <strong>Mon, 10 AM:</strong> Frontend Basics
+                </li>
+                <li style="padding: 1rem; border-bottom: 1px solid #eee;">
+                    <strong>Wed, 2 PM:</strong> Backend API Design
+                </li>
+                <li style="padding: 1rem; border-bottom: 1px solid #eee;">
+                    <strong>Fri, 11 AM:</strong> Algorithms & Data Structures
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>My Tasks</h3>
+            <div style="margin-top: 1rem;">
+                <div style="display: flex; gap: 10px; margin-bottom: 1rem;">
+                    <input type="text" placeholder="Add a new task..."
+                        style="flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                    <button
+                        style="padding: 10px 20px; background: var(--color-green); color: white; border: none; border-radius: 5px; cursor: pointer;">Add</button>
+                </div>
+                <ul style="list-style: none; padding: 0;">
+                    <li
+                        style="padding: 1rem; background: #f9f9f9; margin-bottom: 5px; border-radius: 5px; display: flex; justify-content: space-between;">
+                        <span>Complete CSS Assignment</span>
+                        <span style="color: var(--color-green);">Done</span>
+                    </li>
+                    <li
+                        style="padding: 1rem; background: #f9f9f9; margin-bottom: 5px; border-radius: 5px; display: flex; justify-content: space-between;">
+                        <span>Read Chapter 4 of Python Book</span>
+                        <span style="color: orange;">Pending</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

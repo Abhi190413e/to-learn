@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <img src="{{ url_for('static', filename='../assets/students_hero.png') }}" alt="Academy Students">
+    <div class="hero-content">
+        <h1>Welcome to New Educate Academy</h1>
+        <p>Empowering the next generation with world-class education and real-time support.</p>
+        <a href="/courses" class="cta-button">Explore Courses</a>
+    </div>
+</section>
+
+<section class="features-grid">
+    <div class="feature-card courses" onclick="window.location.href='/courses'">
+        <h3>Courses</h3>
+        <p>Browse our extensive catalog of courses.</p>
+    </div>
+    <div class="feature-card live" onclick="window.location.href='/live-meets'">
+        <h3>Live Meets</h3>
+        <p>Join live interactive sessions with mentors.</p>
+    </div>
+    <div class="feature-card schedule" onclick="window.location.href='/schedule'">
+        <h3>Schedule</h3>
+        <p>Track your tasks and upcoming classes.</p>
+    </div>
+</section>
+{% endblock %}
