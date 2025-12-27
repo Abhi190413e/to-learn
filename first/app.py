@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, jsonify, send_from_directory, redirect, url_for, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
-from chatbot import Chatbot
-from models import db, User, LoginLog, Course, Video, Meeting
+from first.chatbot import Chatbot
+from first.models import db, User, LoginLog, Course, Video, Meeting
 import os
 from datetime import datetime
 
